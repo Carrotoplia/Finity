@@ -1423,7 +1423,7 @@ function finity.new(isdark, gprojectName, thinProject)
                                 connection = nil
                             end
 						end)
-                        
+                        -- a
                         function cheat:SetValue(value)
                             cheat.value = tostring(value)
                             cheat.button.Text = "Bound to " .. tostring(value)
