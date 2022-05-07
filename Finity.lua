@@ -121,9 +121,7 @@ function finity.new(isdark, gprojectName, thinProject)
 	local self = finity
 
 	if not finity.gs["RunService"]:IsStudio() and self.gs["CoreGui"]:FindFirstChild("FinityUI") then
-		warn("finity:", "instance already exists in coregui!")
-		
-		return
+	    self.gs["CoreGui"]:FindFirstChild("FinityUI"):Destroy()
 	end
 
 	local theme = finity.theme
@@ -196,7 +194,7 @@ function finity.new(isdark, gprojectName, thinProject)
 	end)
 
 	self2.userinterface = self:Create("ScreenGui", {
-		Name = "FinityUI",
+		Name = math.random(50000000, 9999999999)
 		ZIndexBehavior = Enum.ZIndexBehavior.Global,
 		ResetOnSpawn = false,
 	})
@@ -1423,7 +1421,7 @@ function finity.new(isdark, gprojectName, thinProject)
                                 connection = nil
                             end
 						end)
-                        -- a
+                        
                         function cheat:SetValue(value)
                             cheat.value = tostring(value)
                             cheat.button.Text = "Bound to " .. tostring(value)
@@ -1492,6 +1490,10 @@ function finity.new(isdark, gprojectName, thinProject)
 	self2.tip.Parent = self2.topbar
 
 	return self2, finityData
+end
+
+function self2:Remove()
+    self2.userinterface:Destroy()
 end
 
 return finity
