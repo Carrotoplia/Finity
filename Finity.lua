@@ -1492,7 +1492,7 @@ function finity.new(isdark, gprojectName, thinProject)
 	return self2, finityData
 end
 
-function self2:Remove()
+function self2:NoGUI()
     self2.userinterface:Destroy()
 end
 
